@@ -5,7 +5,7 @@ import torch.nn.functional as F
 from scproca.nn.base import Classifier
 from scproca.nn.encoder import Encoder, NormalEncoder
 from scproca.nn.decoder import RNADecoder, ADTDecoder
-from scproca.nn.attention import masked_cross_attention
+from scproca.nn.attention import masked_cross_attention, masked_kNN_average
 from scproca.nn.loss import NegativeBinomialLoss, ZeroInflatedNegativeBinomialLoss, MixtureNegativeBinomialLoss
 
 from typing import Literal
@@ -30,6 +30,7 @@ class scProca_VAE(nn.Module):
             dropout: float = 0.2,
             distribution_rna: Literal["ZINB", "NB"] = "NB",
             distribution_adt: Literal["MixtureNB", "NB"] = "MixtureNB",
+            mode: Literal["none", "cross_attention", "NN"] = "cross_attention",
     ):
         super().__init__()
         self.d_rna = d_rna
@@ -68,6 +69,8 @@ class scProca_VAE(nn.Module):
         self.distribution_rna = distribution_rna
         self.distribution_adt = distribution_adt
 
+        self.mode = mode
+
     def encode(self, rna, adt, batch_one_hot, valid_adt):
 
         size_rna = rna.sum(dim=-1).unsqueeze(1)
@@ -76,7 +79,10 @@ class scProca_VAE(nn.Module):
         embedding_rna = self.encoder_rna(rna, batch_one_hot)
         adt = torch.log(1 + adt)
         embedding_adt = self.encoder_adt(adt, batch_one_hot)
-        embedding_adt = masked_cross_attention(query=embedding_adt, reference=embedding_rna, valid=valid_adt.bool())
+        if self.mode == "cross_attention":
+            embedding_adt = masked_cross_attention(query=embedding_adt, reference=embedding_rna, valid=valid_adt.bool())
+        if self.mode == "NN":
+            embedding_adt = masked_kNN_average(query=embedding_adt, reference=embedding_rna, valid=valid_adt.bool())
         embedding = self.integrate(torch.cat([embedding_rna, embedding_adt], dim=-1))
         return embedding, embedding_rna, embedding_adt, size_rna, size_adt
 

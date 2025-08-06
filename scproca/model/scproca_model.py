@@ -56,6 +56,12 @@ class scProca:
 
         * ``'BatchNorm'`` - Batch normalization
         * ``'LayerNorm'`` - Layer normalization
+     mode : {"none", "cross_attention", "NN"}, optional (default="cross_attention")
+        Defines the mode of interaction between RNA and ADT data. One of:
+
+        * ``'none'`` - No interaction between RNA and ADT data (independent processing).
+        * ``'cross_attention'`` - Cross-attention mechanism between RNA and ADT data.
+        * ``'NN'`` - Nearest Neighbors averaging approach.
     dropout : float, optional (default=0.2)
         The dropout rate applied during training.
     d_hidden : tuple of int, optional (default=(256, 256))
@@ -91,6 +97,7 @@ class scProca:
             distribution_adt: Literal["MixtureNB", "NB"] = "MixtureNB",
             activation: Literal["relu", "mish"] = "mish",
             norm: Literal["BatchNorm", "LayerNorm"] = "LayerNorm",
+            mode: Literal["none", "cross_attention", "NN"] = "cross_attention",
             dropout: float = 0.2,
             d_hidden: tuple = (256, 256),
             pre_to_device: bool = True,
@@ -133,6 +140,7 @@ class scProca:
             dropout=dropout,
             distribution_rna=self.distribution_rna,
             distribution_adt=self.distribution_adt,
+            mode=mode,
             prior_parameters={
                 "init_background_mean_adt": init_background_mean_adt,
                 "init_background_std_adt": init_background_std_adt,
