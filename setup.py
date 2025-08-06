@@ -9,7 +9,7 @@ setup(
     license="MIT license",
     name='scproca',
     version='0.1',
-    description='Integrate and generate single-cell proteomics from transcriptomics with cross-attention.',
+    description='A Cross-Attention-Enhanced Deep Generative Model for Single-Cell Transcriptomics and Proteomics Integration and Imputation',
     packages=find_packages(),
     install_requires=requirements
 )

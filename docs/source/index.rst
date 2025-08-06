@@ -7,14 +7,6 @@ Welcome to scProca's documentation!
 
 **scProca** is a package designed to integrate and generate single-cell proteomics from transcriptomics, implemented in PyTorch.
 
-----
-News
-----
-
-.. raw:: html
-
-   <h3 style="color:red; font-size:20px; font-weight:bold;">2025-1-31: A more accurate and detailed version of research paper has been preprinted on bioRxiv <a href="https://doi.org/10.1101/2025.01.28.635217" target="_blank">https://doi.org/10.1101/2025.01.28.635217</a> (2025).</h3>
-
 ------------
 Introduction
 ------------
@@ -48,10 +40,3 @@ UMAP visualization of the low-dimensional representations obtained by scProca on
    :caption: Main functions and parameters
 
    api
-
---------
-Citation
---------
-
-Jiankang Xiong, Shuqiao Zheng, Fuzhou Gong, Liang Ma and Lin Wan. "Integrate and generate single-cell proteomics from transcriptomics with cross-attention." Preprint at bioRxiv https://doi.org/10.1101/2025.01.28.635217 (2025).
-

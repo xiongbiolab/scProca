@@ -1,4 +1,4 @@
-# scProca - Integrate and generate single-cell proteomics from transcriptomics with cross-attention
+# scProca - A Cross-Attention-Enhanced Deep Generative Model for Single-Cell Transcriptomics and Proteomics Integration and Imputation
 
 [![Documentation Status](https://readthedocs.org/projects/scproca/badge/?version=latest)](https://scproca.readthedocs.io/en/latest/?badge=latest)
 
@@ -6,11 +6,13 @@
 
 ---
 
-## News
+[//]: # (## News)
 
-<span style="color:red;font-size:20px; font-weight:bold;">2025-1-31: A more accurate and detailed version of research paper has been preprinted on bioRxiv https://doi.org/10.1101/2025.01.28.635217 (2025).</span>
+[//]: # ()
+[//]: # (<span style="color:red;font-size:20px; font-weight:bold;">2025-1-31: A more accurate and detailed version of research paper has been preprinted on bioRxiv https://doi.org/10.1101/2025.01.28.635217 &#40;2025&#41;.</span>)
 
----
+[//]: # ()
+[//]: # (---)
 
 ## Introduction
 
@@ -57,8 +59,10 @@ Detailed usage documentation is available at https://scProca.readthedocs.io.
 
 Replication code for the research paper is available at https://github.com/ZzzsHuqiaAao/scProca-reproducibility.
 
----
+[//]: # (---)
 
-## Citation
+[//]: # ()
+[//]: # (## Citation)
 
-Jiankang Xiong, Shuqiao Zheng, Fuzhou Gong, Liang Ma and Lin Wan. "Integrate and generate single-cell proteomics from transcriptomics with cross-attention." Preprint at bioRxiv https://doi.org/10.1101/2025.01.28.635217 (2025).
+[//]: # ()
+[//]: # (Jiankang Xiong, Shuqiao Zheng, Fuzhou Gong, Liang Ma and Lin Wan. "Integrate and generate single-cell proteomics from transcriptomics with cross-attention." Preprint at bioRxiv https://doi.org/10.1101/2025.01.28.635217 &#40;2025&#41;.)
