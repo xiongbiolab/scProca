@@ -7,6 +7,19 @@ Welcome to scProca's documentation!
 
 **scProca** is a package designed to integrate and generate single-cell proteomics from transcriptomics, implemented in PyTorch.
 
+----
+News
+----
+
+.. raw:: html
+
+   <h3 style="color:red; font-size:20px; font-weight:bold;">
+   2025-9-29: Now published in IEEE Journal of Biomedical and Health Informatics.
+   <a href="https://doi.org/10.1109/JBHI.2025.3615771" target="_blank">
+   https://doi.org/10.1109/JBHI.2025.3615771
+   </a>.
+   </h3>
+
 ------------
 Introduction
 ------------
@@ -40,3 +53,19 @@ UMAP visualization of the low-dimensional representations obtained by scProca on
    :caption: Main functions and parameters
 
    api
+
+--------
+Citation
+--------
+
+.. code-block:: bibtex
+
+   @article{xiong2025scproca,
+     author  = {Xiong, Jiankang and Zheng, Shuqiao and Gong, Fuzhou and Ma, Liang and Wan, Lin},
+     journal = {IEEE Journal of Biomedical and Health Informatics},
+     title   = {{scProca}: A Cross-Attention-Enhanced Deep Generative Model for Single-Cell Transcriptomics and Proteomics Integration and Imputation},
+     year    = {2025},
+     pages   = {1-11},
+     keywords = {Proteomics;Proteins;Transcriptomics;RNA;Mathematical models;Biomedical measurement;Sequential analysis;Imputation;Data models;Training;Multi-omics integration;Single-cell imputation;Deep generative model;Attention mechanisms;Transcriptomics and proteomics},
+     doi     = {10.1109/JBHI.2025.3615771}
+   }
